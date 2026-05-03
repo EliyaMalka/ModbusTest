@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "AsSuAGtsJLU=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\neria\\Source\\Repos\\ModbusTest-1\\ModbusTestClient\\ModbusTestClient.Console\\ModbusTestClient.Console.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\neria\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\neria\\.nuget\\packages\\nmodbus\\3.0.81\\nmodbus.3.0.81.nupkg.sha512"
+  ],
+  "logs": []
+}

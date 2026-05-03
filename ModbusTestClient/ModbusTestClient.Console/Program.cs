@@ -273,76 +273,76 @@ namespace ModbusTestClient.Console
             int passed = 0, failed = 0;
 
             // Test 1
-            await RunTest("Test 1: FC6 - Write 12345 to register 0", async () =>
+            if (await RunTest("Test 1: FC6 - Write 12345 to register 0", async () =>
             {
                 await _modbusService.WriteSingleRegisterAsync(_slaveId, 0, 12345);
-            }, ref passed, ref failed);
+            })) passed++; else failed++;
 
             // Test 2
-            await RunTest("Test 2: FC3 - Read register 0, verify = 12345", async () =>
+            if (await RunTest("Test 2: FC3 - Read register 0, verify = 12345", async () =>
             {
                 var r = await _modbusService.ReadHoldingRegistersAsync(_slaveId, 0, 1);
                 if (r[0] != 12345) throw new Exception($"Expected 12345, got {r[0]}");
-            }, ref passed, ref failed);
+            })) passed++; else failed++;
 
             // Test 3
-            await RunTest("Test 3: FC16 - Write [100,200,300] to registers 10-12", async () =>
+            if (await RunTest("Test 3: FC16 - Write [100,200,300] to registers 10-12", async () =>
             {
                 await _modbusService.WriteMultipleRegistersAsync(_slaveId, 10, new ushort[] { 100, 200, 300 });
-            }, ref passed, ref failed);
+            })) passed++; else failed++;
 
             // Test 4
-            await RunTest("Test 4: FC3 - Read registers 10-12, verify", async () =>
+            if (await RunTest("Test 4: FC3 - Read registers 10-12, verify", async () =>
             {
                 var r = await _modbusService.ReadHoldingRegistersAsync(_slaveId, 10, 3);
                 if (r[0] != 100 || r[1] != 200 || r[2] != 300)
                     throw new Exception($"Expected [100,200,300], got [{string.Join(",", r)}]");
-            }, ref passed, ref failed);
+            })) passed++; else failed++;
 
             // Test 5
-            await RunTest("Test 5: FC5 - Write coil 0 = ON", async () =>
+            if (await RunTest("Test 5: FC5 - Write coil 0 = ON", async () =>
             {
                 await _modbusService.WriteSingleCoilAsync(_slaveId, 0, true);
-            }, ref passed, ref failed);
+            })) passed++; else failed++;
 
             // Test 6
-            await RunTest("Test 6: FC1 - Read coil 0, verify ON", async () =>
+            if (await RunTest("Test 6: FC1 - Read coil 0, verify ON", async () =>
             {
                 var r = await _modbusService.ReadCoilsAsync(_slaveId, 0, 1);
                 if (!r[0]) throw new Exception("Expected ON, got OFF");
-            }, ref passed, ref failed);
+            })) passed++; else failed++;
 
             // Test 7
-            await RunTest("Test 7: FC5 - Write coil 0 = OFF", async () =>
+            if (await RunTest("Test 7: FC5 - Write coil 0 = OFF", async () =>
             {
                 await _modbusService.WriteSingleCoilAsync(_slaveId, 0, false);
-            }, ref passed, ref failed);
+            })) passed++; else failed++;
 
             // Test 8
-            await RunTest("Test 8: FC1 - Read coil 0, verify OFF", async () =>
+            if (await RunTest("Test 8: FC1 - Read coil 0, verify OFF", async () =>
             {
                 var r = await _modbusService.ReadCoilsAsync(_slaveId, 0, 1);
                 if (r[0]) throw new Exception("Expected OFF, got ON");
-            }, ref passed, ref failed);
+            })) passed++; else failed++;
 
             System.Console.WriteLine();
             var resultColor = failed == 0 ? ConsoleColor.Green : ConsoleColor.Yellow;
             PrintColor($"  ═══ Batch Test Complete: {passed} Passed, {failed} Failed ═══", resultColor);
         }
 
-        static async Task RunTest(string name, Func<Task> test, ref int passed, ref int failed)
+        static async Task<bool> RunTest(string name, Func<Task> test)
         {
             System.Console.Write($"  {name}... ");
             try
             {
                 await test();
-                passed++;
                 PrintColor("PASSED", ConsoleColor.Green);
+                return true;
             }
             catch (Exception ex)
             {
-                failed++;
                 PrintColor($"FAILED - {ex.Message}", ConsoleColor.Red);
+                return false;
             }
         }
 

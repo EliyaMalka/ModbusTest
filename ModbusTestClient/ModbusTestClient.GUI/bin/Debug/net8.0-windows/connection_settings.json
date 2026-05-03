@@ -1,0 +1,7 @@
+{
+  "IpAddress": "127.0.0.1",
+  "Port": 502,
+  "SlaveId": 1,
+  "TimeoutMs": 3000,
+  "AutoRefreshIntervalMs": 1000
+}

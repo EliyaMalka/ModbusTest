@@ -1,0 +1,13 @@
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\bin\Debug\net8.0\ModbusTestClient.Core.deps.json
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\bin\Debug\net8.0\ModbusTestClient.Core.dll
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\bin\Debug\net8.0\ModbusTestClient.Core.pdb
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\ModbusTestClient.Core.csproj.AssemblyReference.cache
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\ModbusTestClient.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\ModbusTestClient.Core.AssemblyInfoInputs.cache
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\ModbusTestClient.Core.AssemblyInfo.cs
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\ModbusTestClient.Core.csproj.CoreCompileInputs.cache
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\ModbusTestClient.Core.sourcelink.json
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\ModbusTestClient.Core.dll
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\refint\ModbusTestClient.Core.dll
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\ModbusTestClient.Core.pdb
+C:\Users\neria\Source\Repos\ModbusTest-1\ModbusTestClient\ModbusTestClient.Core\obj\Debug\net8.0\ref\ModbusTestClient.Core.dll
